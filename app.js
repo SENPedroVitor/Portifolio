@@ -115,6 +115,7 @@ const translations = {
     contactTitle: "Vamos conversar sobre trabalho, projetos ou colaboração.",
     contactText:
       "Se a vaga ou projeto precisa de alguém que organize, execute e aprenda rápido, esse é o melhor ponto de partida.",
+    footerQuote: "\"Os sonhos de um homem não têm fim.\"",
     footerText:
       "Portfólio pessoal de Pedro Vitor. Última atualização da estrutura visual em 17 de maio de 2026."
   },
@@ -234,6 +235,7 @@ const translations = {
     contactTitle: "Let's talk about work, projects or collaboration.",
     contactText:
       "If the role or project needs someone who can organize, execute and learn fast, this is the right starting point.",
+    footerQuote: "\"A man's dreams never end.\"",
     footerText:
       "Pedro Vitor's personal portfolio. Visual structure last updated on May 17, 2026."
   }

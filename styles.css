@@ -962,6 +962,15 @@ h1, h2, h3 {
   font-size: 0.85rem;
 }
 
+.footer-quote {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  margin-bottom: 8px;
+}
+
 .footer-socials {
   display: flex;
   gap: 20px;
