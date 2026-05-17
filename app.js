@@ -62,6 +62,9 @@ const translations = {
     skillOffice: "Excel / Pacote Office",
     skillGraphicDesign: "Design Gráfico",
     skillMarketing: "Marketing Digital",
+    languagesTitle: "Idiomas",
+    langPt: "🇧🇷 Português (Nativo)",
+    langEn: "🇺🇸 Inglês (Intermediário)",
     projectsLabel: "Projetos",
     projectsTitle: "Projetos reais já publicados",
     projectsIntro:
@@ -175,6 +178,9 @@ const translations = {
     skillOffice: "Excel / Office Suite",
     skillGraphicDesign: "Graphic Design",
     skillMarketing: "Digital Marketing",
+    languagesTitle: "Languages",
+    langPt: "🇧🇷 Portuguese (Native)",
+    langEn: "🇺🇸 English (Intermediate)",
     projectsLabel: "Projects",
     projectsTitle: "Real projects already published",
     projectsIntro:
