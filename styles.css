@@ -1,18 +1,18 @@
 :root {
-  /* Dark Nordic Palette */
-  --bg-deep: #0a0a0c;
-  --bg-surface: rgba(255, 255, 255, 0.03);
-  --bg-surface-hover: rgba(255, 255, 255, 0.06);
+  /* Soft Dark Nordic Palette */
+  --bg-deep: #1e1d1b; /* Carvão Quente (Menos preto, mais suave) */
+  --bg-surface: rgba(255, 255, 255, 0.05); /* Superfície mais visível */
+  --bg-surface-hover: rgba(255, 255, 255, 0.09);
   
-  --text-main: #f0f0f0;
-  --text-muted: #8a8a8e;
+  --text-main: #f5f5f5; /* Off-white um pouco mais claro */
+  --text-muted: #9b9a97; /* Cinza médio quente */
   
   --accent: #c96f4a;
-  --accent-glow: rgba(201, 111, 74, 0.2);
+  --accent-glow: rgba(201, 111, 74, 0.25); /* Glow levemente mais forte pra dar vida */
   --accent-deep: #b35d3a;
   
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.18);
+  --border: rgba(255, 255, 255, 0.12); /* Bordas mais marcadas */
+  --border-hover: rgba(255, 255, 255, 0.22);
   
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;
@@ -111,7 +111,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  background: rgba(10, 10, 12, 0.7);
+  background: rgba(30, 29, 27, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
@@ -506,6 +506,35 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20px;
+}
+
+.experience-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.company-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+}
+
+.company-logo-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 .experience-header h3 {
@@ -936,5 +965,51 @@ h1, h2, h3 {
   
   .button.large {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-shell {
+    padding: 16px 12px 60px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3rem);
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-card {
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+  }
+  
+  .avatar {
+    margin: 0 auto;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .button {
+    width: 100%;
+  }
+  
+  .topnav {
+    gap: 12px;
+    justify-content: space-between;
+  }
+  
+  .topnav a {
+    font-size: 0.8rem;
+  }
+  
+  .section-heading h2 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 }
