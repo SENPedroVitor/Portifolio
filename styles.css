@@ -171,6 +171,15 @@ h1, h2, h3 {
   color: var(--text-main);
 }
 
+.topnav a.active {
+  color: var(--text-main);
+}
+
+.topnav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .topnav a::after {
   content: '';
   position: absolute;
@@ -665,6 +674,17 @@ h1, h2, h3 {
 .project-card {
   height: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.project-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+  z-index: 2;
 }
 
 .project-content {
@@ -1062,5 +1082,121 @@ h1, h2, h3 {
   
   .section-heading h2 {
     font-size: clamp(1.8rem, 8vw, 2.2rem);
+  }
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--text-main);
+  color: var(--bg-deep);
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 99;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* --- Typewriter Effect --- */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid var(--accent);
+  animation: blink-caret 0.8s step-end infinite;
+  width: fit-content;
+}
+
+.typewriter.done {
+  border-right-color: transparent;
+  animation: none;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent); }
+}
+
+/* --- Print Styles --- */
+@media print {
+  * {
+    background: white !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body.nordic::before,
+  .project-glow,
+  .contact-glow,
+  .back-to-top,
+  .scroll-indicator,
+  .lang-toggle,
+  .topbar {
+    display: none !important;
+  }
+
+  .page-shell {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px 0;
+  }
+
+  .glass-card {
+    border: 1px solid #ddd !important;
+    backdrop-filter: none !important;
+    page-break-inside: avoid;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .bento-grid,
+  .project-grid,
+  .dual-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    -webkit-text-fill-color: #000 !important;
+    background: none !important;
+    font-size: 2.5rem;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #666 !important;
+  }
+
+  .button::after,
+  .brand a::after,
+  .footer-socials a::after {
+    content: none !important;
   }
 }

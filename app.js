@@ -310,4 +310,84 @@ document.addEventListener("DOMContentLoaded", () => {
   animatedSections.forEach(section => {
     observer.observe(section);
   });
+
+  // --- Scroll Spy (Active Nav Link) ---
+  const navLinks = document.querySelectorAll(".topnav a[href^='#']");
+  const sections = document.querySelectorAll("section[id]");
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 200;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute("id");
+
+      if (scrollY >= top && scrollY < top + height) {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+
+  // --- Back to Top Button ---
+  const backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    }, { passive: true });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // --- Typewriter Effect ---
+  const heroTitle = document.querySelector(".hero h1.typewriter");
+  if (heroTitle) {
+    const fullHTML = heroTitle.innerHTML;
+    heroTitle.innerHTML = "";
+    heroTitle.style.visibility = "visible";
+
+    // Flatten text from HTML (preserving <br>)
+    const parts = fullHTML.split("<br>");
+    let charIndex = 0;
+    let partIndex = 0;
+    let currentText = "";
+
+    function typeChar() {
+      if (partIndex < parts.length) {
+        const part = parts[partIndex];
+        if (charIndex < part.length) {
+          currentText += part[charIndex];
+          heroTitle.innerHTML = currentText + (partIndex < parts.length - 1 ? "" : "");
+          charIndex++;
+          setTimeout(typeChar, 45);
+        } else {
+          if (partIndex < parts.length - 1) {
+            currentText += "<br>";
+            heroTitle.innerHTML = currentText;
+          }
+          partIndex++;
+          charIndex = 0;
+          setTimeout(typeChar, 100);
+        }
+      } else {
+        heroTitle.classList.add("done");
+      }
+    }
+
+    // Start typing after a small delay
+    setTimeout(typeChar, 600);
+  }
 });
