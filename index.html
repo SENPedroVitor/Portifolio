@@ -11,6 +11,11 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="./og-image.png">
+  <meta name="twitter:image" content="./og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23faf9f7' stroke='%23c96f4a' stroke-width='3'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='36' fill='%23c96f4a'%3EPV%3C/text%3E%3C/svg%3E">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,10 +101,20 @@
                 <i class="devicon-linkedin-plain"></i>
                 <span data-i18n="secondaryCta">Ver LinkedIn</span>
               </a>
+              <a class="button secondary" href="./curriculo.pdf" download aria-label="Baixar currículo em PDF">
+                <i class="ph ph-download-simple"></i>
+                <span data-i18n="downloadCv">Baixar Currículo</span>
+              </a>
             </div>
           </div>
         </aside>
       </section>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator section-animate" aria-hidden="true">
+        <span data-i18n="scrollHint">Role para explorar</span>
+        <i class="ph ph-caret-double-down"></i>
+      </div>
 
       <section class="section intro-strip section-animate">
         <div class="intro-grid">
@@ -127,7 +142,7 @@
             <div class="experience-content glass-card">
               <div class="experience-header">
                 <div class="experience-title-wrap">
-                  <img src="./ldl.jpeg" alt="LDL Importadora Logo" class="company-logo">
+                  <img src="./ldl.jpeg" alt="LDL Importadora Logo" class="company-logo" loading="lazy">
                   <div>
                     <h3 data-i18n="job1Title">Cientista de Dados & Apoio Operacional</h3>
                     <p class="muted" data-i18n="job1Meta">Goiânia/GO · Prestador de serviços (PJ)</p>
@@ -149,7 +164,7 @@
             <div class="experience-content glass-card">
               <div class="experience-header">
                 <div class="experience-title-wrap">
-                  <img src="./tahto.png" alt="Tahto Logo" class="company-logo">
+                  <img src="./tahto.png" alt="Tahto Logo" class="company-logo" loading="lazy">
                   <div>
                     <h3 data-i18n="job2Title">Experiência Complementar em Design Gráfico</h3>
                     <p class="muted" data-i18n="job2Meta">Goiânia/GO · Maio a Outubro</p>
@@ -169,7 +184,7 @@
             <div class="experience-content glass-card">
               <div class="experience-header">
                 <div class="experience-title-wrap">
-                  <img src="./tahto.png" alt="Tahto Logo" class="company-logo">
+                  <img src="./tahto.png" alt="Tahto Logo" class="company-logo" loading="lazy">
                   <div>
                     <h3 data-i18n="job3Title">Jovem Aprendiz — Administrativo</h3>
                     <p class="muted" data-i18n="job3Meta">Goiânia/GO · Junho de 2024 a Maio de 2025</p>
@@ -368,6 +383,17 @@
     <footer class="footer section-animate">
       <div class="footer-content">
         <span class="brand-mark small">PV</span>
+        <div class="footer-socials">
+          <a href="https://github.com/SENPedroVitor" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/pedro-vitor-magalhães-da-silva-560621379" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="devicon-linkedin-plain"></i>
+          </a>
+          <a href="https://www.behance.net/gallery/236192771/Trabalhos-Vem-Ser-Tahto" target="_blank" rel="noreferrer" aria-label="Behance">
+            <i class="devicon-behance-plain"></i>
+          </a>
+        </div>
         <p data-i18n="footerText">Portfólio pessoal de Pedro Vitor. Última atualização da estrutura visual em 17 de maio de 2026.</p>
       </div>
     </footer>
