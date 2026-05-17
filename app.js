@@ -272,6 +272,13 @@ function setLanguage(language) {
     "aria-label",
     selected === "pt" ? "Mudar idioma para inglês" : "Switch language to Portuguese"
   );
+
+  // Troca o link do currículo conforme o idioma
+  const cvLink = document.getElementById("cvDownload");
+  if (cvLink) {
+    cvLink.href = selected === "pt" ? "./curriculo-pt.pdf" : "./curriculo-en.pdf";
+  }
+
   localStorage.setItem("portfolio-language", selected);
 }
 
