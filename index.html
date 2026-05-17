@@ -41,17 +41,25 @@
         </span>
       </a>
 
-      <nav class="topnav" aria-label="Primary">
+      <nav class="topnav" id="topnav" aria-label="Primary">
         <a href="#experience" data-i18n="navExperience">Experiência</a>
         <a href="#skills" data-i18n="navSkills">Habilidades</a>
         <a href="#projects" data-i18n="navProjects">Projetos</a>
         <a href="#contact" data-i18n="navContact">Contato</a>
       </nav>
 
-      <button class="lang-toggle" id="langToggle" type="button" aria-live="polite">
-        <i class="ph ph-globe"></i>
-        <span data-i18n="langButton">EN</span>
-      </button>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+          <i class="ph ph-moon" id="themeIcon"></i>
+        </button>
+        <button class="lang-toggle" id="langToggle" type="button" aria-live="polite">
+          <i class="ph ph-globe"></i>
+          <span data-i18n="langButton">EN</span>
+        </button>
+        <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
     </header>
 
     <main id="content">

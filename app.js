@@ -289,6 +289,55 @@ langToggle.addEventListener("click", () => {
 
 setLanguage(savedLanguage || browserLanguage);
 
+// --- Theme Toggle (Dark/Light) ---
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+const body = document.body;
+
+function setTheme(dark) {
+  if (dark) {
+    body.classList.add("dark");
+    themeIcon.className = "ph ph-sun";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#1a1a1c");
+  } else {
+    body.classList.remove("dark");
+    themeIcon.className = "ph ph-moon";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#faf9f7");
+  }
+  localStorage.setItem("portfolio-theme", dark ? "dark" : "light");
+}
+
+// Check saved preference or system preference
+const savedTheme = localStorage.getItem("portfolio-theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+  setTheme(true);
+}
+
+themeToggle?.addEventListener("click", () => {
+  setTheme(!body.classList.contains("dark"));
+});
+
+// --- Mobile Menu Toggle ---
+const menuToggle = document.getElementById("menuToggle");
+const topnav = document.getElementById("topnav");
+
+menuToggle?.addEventListener("click", () => {
+  topnav.classList.toggle("open");
+  const isOpen = topnav.classList.contains("open");
+  menuToggle.querySelector("i").className = isOpen ? "ph ph-x" : "ph ph-list";
+  menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+});
+
+// Close menu when a nav link is clicked
+topnav?.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    topnav.classList.remove("open");
+    menuToggle.querySelector("i").className = "ph ph-list";
+  });
+});
+
 // --- Scroll Animations (Intersection Observer) ---
 document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
