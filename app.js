@@ -12,6 +12,7 @@ const translations = {
     navProjects: "Projetos",
     langButton: "EN",
     availabilityPill: "Dados, automação e direção visual em uma base só.",
+    availabilityStatus: "Disponível para oportunidades",
     eyebrow: "Disponível para oportunidades remotas e presenciais",
     heroName: "Pedro Vitor\nMagalhães da Silva",
     heroKicker: "Dev, IA aplicada e direção visual para projetos digitais.",
@@ -20,7 +21,7 @@ const translations = {
     statTwoValue: "IA prática",
     statTwoLabel: "Automação e apoio a fluxos internos com ferramentas atuais.",
     heroText:
-      "Sou Pedro Vitor Magalhães da Silva, estudante de Ciência de Dados com experiência em apoio operacional, organização de dados, automação com IA e produção visual para comunicação digital.",
+      "Sou o Pedro — misturo dados, automação e design pra resolver problemas reais. Gosto de transformar bagunça em estrutura e ideias em coisa visual que funciona. Quando não tô codando, tô desenhando ou treinando IA pra fazer o trabalho chato por mim.",
     primaryCta: "Falar por e-mail",
     secondaryCta: "Ver LinkedIn",
     downloadCv: "Baixar Currículo",
@@ -45,10 +46,10 @@ const translations = {
     expTitle: "Experiências recentes e complementares",
     job1Title: "Cientista de Dados & Apoio Operacional",
     job1Meta: "Goiânia/GO · Prestador de serviços (PJ)",
-    job1Bullet1: "Organização de planilhas, arquivos e dados financeiros.",
-    job1Bullet2: "Cálculo de preço de custo de importação e controle de informações.",
-    job1Bullet3: "Estruturação de dados para relatórios e consultas internas.",
-    job1Bullet4: "Treinamento de IA para apoiar processos internos.",
+    job1Bullet1: "Estruturei +500 registros financeiros, reduzindo tempo de consulta em relatórios internos.",
+    job1Bullet2: "Automatizei cálculo de preço de custo de importação com planilhas inteligentes.",
+    job1Bullet3: "Criei base de dados organizada que virou referência para consultas do time.",
+    job1Bullet4: "Treinei modelos de IA para automatizar processos repetitivos da operação.",
     job2Title: "Experiência Complementar em Design Gráfico",
     job2Meta: "Goiânia/GO · Maio a Outubro",
     job2Bullet1: "Apoio na produção de materiais visuais e organização de conteúdos.",
@@ -68,6 +69,7 @@ const translations = {
     languagesTitle: "Idiomas",
     langPt: "🇧🇷 Português (Nativo)",
     langEn: "🇺🇸 Inglês (Intermediário)",
+    langEs: "🇪🇸 Espanhol (Intermediário)",
     projectsLabel: "Projetos",
     projectsTitle: "Projetos reais já publicados",
     projectsIntro:
@@ -75,15 +77,15 @@ const translations = {
     project1Status: "Publicado",
     project1Title: "Banco de Dados Agrícola",
     project1Text:
-      "Repositório voltado para estruturação de dados no contexto agrícola, alinhado ao meu interesse em organização, leitura e tratamento de informações.",
+      "Sistema de estruturação de dados agrícolas com tabelas otimizadas, queries de análise e visualização de safras.",
     project2Status: "Publicado",
     project2Title: "Interface Visual para CLI",
     project2Text:
-      "Experimento de interface visual para terminal em Linux, mostrando interesse em experiência de uso, camada visual e prototipação técnica.",
+      "Terminal customizado com GUI QML, tema Nordic e gerenciamento visual de processos no Linux.",
     project3Status: "Publicado",
     project3Title: "Rede Neural Faux",
     project3Text:
-      "Projeto em Python voltado para experimentação com rede neural, reforçando minha base prática em lógica, automação e aprendizado aplicado.",
+      "Rede neural construída do zero em Python — arquitetura, treinamento e visualização de aprendizado.",
     projectLink: "Ver no GitHub",
     visualLabel: "Visual",
     visualTitle: "Trabalhos gráficos e presença criativa",
@@ -92,7 +94,10 @@ const translations = {
     visualProfileLabel: "Destaque",
     visualProfileTitle: "Trabalhos Vem Ser Tahto",
     visualProfileText:
-      "Recorte de trabalhos visuais publicados no Behance, conectado à minha experiência complementar em design gráfico.",
+      "Peças visuais criadas durante minha experiência com design gráfico — identidade, social media e materiais internos. Tudo reunido no Behance.",
+    visualProfile2Title: "Projeto Visual",
+    visualProfile2Text:
+      "Portfólio de identidade visual, tipografia e composições gráficas autorais publicadas no Behance.",
     visualPrimaryCta: "Abrir projeto no Behance",
     visualSecondaryCta: "Ver todos os repositórios",
     visualNextLabel: "Behance",
@@ -117,7 +122,9 @@ const translations = {
       "Se a vaga ou projeto precisa de alguém que organize, execute e aprenda rápido, esse é o melhor ponto de partida.",
     footerQuote: "\"Os sonhos de um homem não têm fim.\"",
     footerText:
-      "Portfólio pessoal de Pedro Vitor. Última atualização da estrutura visual em 17 de maio de 2026."
+      "Portfólio pessoal de Pedro Vitor. Última atualização em 31 de maio de 2026.",
+    footerStatus: "Disponível para oportunidades",
+    floatingCta: "Falar comigo"
   },
   en: {
     pageTitle: "Pedro Vitor Magalhaes da Silva | Portfolio",
@@ -132,6 +139,7 @@ const translations = {
     navProjects: "Projects",
     langButton: "PT",
     availabilityPill: "Data, automation and visual direction in one base.",
+    availabilityStatus: "Available for opportunities",
     eyebrow: "Available for remote and on-site opportunities",
     heroName: "Pedro Vitor\nMagalhães da Silva",
     heroKicker: "Dev, applied AI and visual direction for digital projects.",
@@ -140,7 +148,7 @@ const translations = {
     statTwoValue: "Practical AI",
     statTwoLabel: "Automation and support for internal workflows with current tools.",
     heroText:
-      "I am Pedro Vitor Magalhães da Silva, a Data Science student with experience in operational support, data organization, AI automation and visual production for digital communication.",
+      "I'm Pedro — I mix data, automation, and design to solve real problems. I love turning chaos into structure and ideas into visual things that work. When I'm not coding, I'm designing or training AI to do the boring stuff for me.",
     primaryCta: "Send an email",
     secondaryCta: "View LinkedIn",
     downloadCv: "Download CV",
@@ -165,10 +173,10 @@ const translations = {
     expTitle: "Recent and complementary experience",
     job1Title: "Data Scientist & Operational Support",
     job1Meta: "Goiania, GO · Contractor",
-    job1Bullet1: "Organized spreadsheets, files and financial data.",
-    job1Bullet2: "Calculated import cost prices and managed information control.",
-    job1Bullet3: "Structured data for internal reports and queries.",
-    job1Bullet4: "Trained AI workflows to support internal processes.",
+    job1Bullet1: "Structured 500+ financial records, reducing lookup time for internal reports.",
+    job1Bullet2: "Automated import cost price calculations with smart spreadsheets.",
+    job1Bullet3: "Built an organized database that became the team's go-to reference.",
+    job1Bullet4: "Trained AI models to automate repetitive operational processes.",
     job2Title: "Complementary Experience in Graphic Design",
     job2Meta: "Goiania, GO · May to October",
     job2Bullet1: "Supported the production of visual materials and content organization.",
@@ -188,6 +196,7 @@ const translations = {
     languagesTitle: "Languages",
     langPt: "🇧🇷 Portuguese (Native)",
     langEn: "🇺🇸 English (Intermediate)",
+    langEs: "🇪🇸 Spanish (Intermediate)",
     projectsLabel: "Projects",
     projectsTitle: "Real projects already published",
     projectsIntro:
@@ -195,15 +204,15 @@ const translations = {
     project1Status: "Published",
     project1Title: "Agricultural Database",
     project1Text:
-      "A repository focused on structuring data in an agricultural context, aligned with my interest in organization, reading and processing information.",
+      "Agricultural data structuring system with optimized tables, analysis queries, and crop visualization.",
     project2Status: "Published",
     project2Title: "Visual Interface for CLI",
     project2Text:
-      "A visual interface experiment for Linux terminal use, showing interest in user experience, visual layer and technical prototyping.",
+      "Custom terminal with QML GUI, Nordic theme, and visual process management on Linux.",
     project3Status: "Published",
     project3Title: "Neural Network Faux",
     project3Text:
-      "A Python project aimed at neural network experimentation, reinforcing my practical base in logic, automation and applied learning.",
+      "Neural network built from scratch in Python — architecture, training, and learning visualization.",
     projectLink: "View on GitHub",
     visualLabel: "Visual",
     visualTitle: "Graphic work and creative presence",
@@ -212,7 +221,10 @@ const translations = {
     visualProfileLabel: "Featured work",
     visualProfileTitle: "Vem Ser Tahto Works",
     visualProfileText:
-      "A selection of visual work published on Behance, connected to my complementary experience in graphic design.",
+      "Visual pieces created during my graphic design experience — branding, social media and internal materials. All gathered on Behance.",
+    visualProfile2Title: "Visual Project",
+    visualProfile2Text:
+      "Visual identity, typography, and personal graphic compositions portfolio published on Behance.",
     visualPrimaryCta: "Open project on Behance",
     visualSecondaryCta: "View all repositories",
     visualNextLabel: "Behance",
@@ -237,7 +249,9 @@ const translations = {
       "If the role or project needs someone who can organize, execute and learn fast, this is the right starting point.",
     footerQuote: "\"A man's dreams never end.\"",
     footerText:
-      "Pedro Vitor's personal portfolio. Visual structure last updated on May 17, 2026."
+      "Pedro Vitor's personal portfolio. Last updated on May 31, 2026.",
+    footerStatus: "Available for opportunities",
+    floatingCta: "Talk to me"
   }
 };
 
@@ -318,6 +332,10 @@ if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 }
 
 themeToggle?.addEventListener("click", () => {
+  themeToggle.classList.add("theme-spinning");
+  setTimeout(() => {
+    themeToggle.classList.remove("theme-spinning");
+  }, 500);
   setTheme(!body.classList.contains("dark"));
 });
 
@@ -345,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.15
+    threshold: 0.05
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -407,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.querySelector(".hero h1.typewriter");
   if (heroTitle) {
     const fullHTML = heroTitle.innerHTML;
-    heroTitle.innerHTML = "";
+    heroTitle.innerHTML = '<span class="typewriter-cursor blinking"></span>';
     heroTitle.style.visibility = "visible";
 
     // Flatten text from HTML (preserving <br>)
@@ -420,25 +438,137 @@ document.addEventListener("DOMContentLoaded", () => {
       if (partIndex < parts.length) {
         const part = parts[partIndex];
         if (charIndex < part.length) {
-          currentText += part[charIndex];
-          heroTitle.innerHTML = currentText + (partIndex < parts.length - 1 ? "" : "");
+          const char = part[charIndex];
+          currentText += char;
           charIndex++;
-          setTimeout(typeChar, 45);
+          
+          // Ritmo de digitação realista de computador (60ms a 120ms)
+          let delay = 60 + Math.random() * 60;
+          
+          // Pausa extra em espaços e pontuação para simular digitação humana
+          if (char === " ") {
+            delay = 140 + Math.random() * 40;
+          } else if (char === "," || char === "." || char === "-") {
+            delay = 250 + Math.random() * 50;
+          }
+
+          // Cursor fica sólido (sem piscar) enquanto está ativamente digitando
+          heroTitle.innerHTML = currentText + '<span class="typewriter-cursor"></span>';
+          setTimeout(typeChar, delay);
         } else {
           if (partIndex < parts.length - 1) {
             currentText += "<br>";
-            heroTitle.innerHTML = currentText;
+            // Pisca o cursor durante a pausa da quebra de linha
+            heroTitle.innerHTML = currentText + '<span class="typewriter-cursor blinking"></span>';
           }
           partIndex++;
           charIndex = 0;
-          setTimeout(typeChar, 100);
+          setTimeout(typeChar, 400); // Pausa de 400ms ao final de cada linha (computador)
         }
       } else {
+        // Digitação finalizada -> pisca e depois faz o fade-out
+        heroTitle.innerHTML = currentText + '<span class="typewriter-cursor blinking finished"></span>';
         heroTitle.classList.add("done");
       }
     }
 
-    // Start typing after a small delay
-    setTimeout(typeChar, 600);
+    // Inicia a digitação após um pequeno delay inicial (cursor fica piscando no início)
+    setTimeout(typeChar, 800);
   }
+
+  // --- Particle Canvas ---
+  const canvas = document.getElementById("particleCanvas");
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    const PARTICLE_COUNT = 50;
+    const MAX_DIST = 120;
+
+    function resizeCanvas() {
+      const hero = canvas.parentElement;
+      canvas.width = hero.offsetWidth + 40;
+      canvas.height = hero.offsetHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          r: Math.random() * 2 + 1
+        });
+      }
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const isDark = document.body.classList.contains("dark");
+      const color = isDark ? "rgba(212, 129, 94," : "rgba(201, 111, 74,";
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = color + "0.4)";
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < MAX_DIST) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = color + (0.15 * (1 - dist / MAX_DIST)) + ")";
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(drawParticles);
+    }
+
+    resizeCanvas();
+    createParticles();
+    drawParticles();
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles();
+    });
+  }
+
+  // --- Floating CTA ---
+  const floatingCta = document.getElementById("floatingCta");
+  if (floatingCta) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        floatingCta.classList.add("visible");
+      } else {
+        floatingCta.classList.remove("visible");
+      }
+    }, { passive: true });
+  }
+
+  // --- Spotlight Hover Glow Effect ---
+  const cards = document.querySelectorAll('.project-card, .visual-card, .contact-box');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 });

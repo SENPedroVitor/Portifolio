@@ -10,10 +10,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f7;
+      --text: #1c1c1e;
+      --muted: #686765;
+      --accent-start: #c96f4a;
+      --accent-end: #a34e2b;
+      --btn-bg: #1c1c1e;
+      --btn-color: #faf9f7;
+      --btn-hover: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a1c;
+        --text: #f0f0f0;
+        --muted: #9b9a97;
+        --accent-start: #d4815e;
+        --accent-end: #b35d3a;
+        --btn-bg: #f0f0f0;
+        --btn-color: #1a1a1c;
+        --btn-hover: #ffffff;
+      }
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #faf9f7;
-      color: #1c1c1e;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -29,7 +54,7 @@
       font-size: clamp(6rem, 20vw, 10rem);
       font-weight: 700;
       line-height: 1;
-      background: linear-gradient(135deg, #c96f4a, #a34e2b);
+      background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -42,7 +67,7 @@
       margin: 16px 0 12px;
     }
     p {
-      color: #686765;
+      color: var(--muted);
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 32px;
@@ -52,8 +77,8 @@
       align-items: center;
       gap: 8px;
       padding: 14px 28px;
-      background: #1c1c1e;
-      color: #faf9f7;
+      background: var(--btn-bg);
+      color: var(--btn-color);
       border-radius: 999px;
       text-decoration: none;
       font-size: 0.95rem;
@@ -61,7 +86,7 @@
       transition: all 0.2s ease;
     }
     .back-btn:hover {
-      background: #000;
+      background: var(--btn-hover);
       transform: scale(1.03);
     }
   </style>
