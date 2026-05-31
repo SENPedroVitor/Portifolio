@@ -49,14 +49,14 @@
       </nav>
 
       <div class="topbar-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+        <button class="theme-toggle magnetic-btn" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
           <i class="ph ph-moon" id="themeIcon"></i>
         </button>
-        <button class="lang-toggle" id="langToggle" type="button" aria-live="polite">
+        <button class="lang-toggle magnetic-btn" id="langToggle" type="button" aria-live="polite">
           <i class="ph ph-globe"></i>
           <span data-i18n="langButton">EN</span>
         </button>
-        <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">
+        <button class="mobile-menu-toggle magnetic-btn" id="menuToggle" type="button" aria-label="Abrir menu">
           <i class="ph ph-list"></i>
         </button>
       </div>
@@ -113,7 +113,7 @@
                 <i class="devicon-linkedin-plain"></i>
                 <span data-i18n="secondaryCta">Ver LinkedIn</span>
               </a>
-              <a class="button secondary" href="./curriculo-pt.pdf" download id="cvDownload" aria-label="Baixar currículo em PDF">
+              <a class="button secondary magnetic-btn" href="./curriculo-pt.pdf" download id="cvDownload" aria-label="Baixar currículo em PDF">
                 <i class="ph ph-download-simple"></i>
                 <span data-i18n="downloadCv">Baixar Currículo</span>
               </a>
@@ -131,13 +131,23 @@
       <section class="section intro-strip section-animate">
         <div class="intro-grid">
           <div>
-            <p class="section-label"><i class="ph ph-user"></i> <span data-i18n="introLabel">Resumo</span></p>
-            <h2 data-i18n="introTitle">Perfil híbrido para operação, tecnologia e conteúdo visual.</h2>
+            <p class="section-label"><i class="ph ph-user"></i> <span data-i18n="introLabel">Sobre</span></p>
+            <h2 data-i18n="introTitle">Construindo pontes entre dados, automação de processos e design visual.</h2>
           </div>
           <div class="intro-content">
             <p data-i18n="introText">
-              Atuo bem em ambientes que precisam de organização, análise e execução. Minha base mistura rotinas administrativas, manipulação de dados, automações e apoio criativo para marcas e times.
+              Atuo na intersecção entre a análise técnica e a comunicação visual. Com foco em Ciência de Dados, desenvolvo automações inteligentes e arquiteturas de informação robustas, sem abrir mão de uma identidade visual refinada. Meu objetivo é transformar processos complexos em fluxos de trabalho eficientes e intuitivos.
             </p>
+            <div class="intro-details">
+              <div class="intro-detail-item">
+                <h4><i class="ph ph-database"></i> Engenharia & Análise</h4>
+                <p data-i18n="introDetailData">Desenvolvimento de bases estruturadas, scripts ETL e análise analítica para suporte à tomada de decisões operacionais.</p>
+              </div>
+              <div class="intro-detail-item">
+                <h4><i class="ph ph-cpu"></i> IA & Automações</h4>
+                <p data-i18n="introDetailAi">Integração de APIs de IA generativa, engenharia de prompt e scripts de automação para otimizar fluxos de trabalho.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -223,6 +233,7 @@
         <div class="bento-grid section-animate">
           <!-- Tech Stack -->
           <article class="bento-card glass-card">
+            <div class="bento-glow"></div>
             <h3><i class="ph ph-code"></i> Stack Técnico</h3>
             <div class="skills-wrap">
               <div class="skill-pill"><i class="devicon-python-plain"></i> Python</div>
@@ -230,8 +241,12 @@
               <div class="skill-pill"><i class="devicon-pandas-plain"></i> Pandas</div>
               <div class="skill-pill"><i class="devicon-streamlit-plain"></i> Streamlit</div>
               <div class="skill-pill"><i class="devicon-sqlite-plain"></i> SQLite</div>
+              <div class="skill-pill"><i class="devicon-mongodb-plain"></i> MongoDB</div>
+              <div class="skill-pill"><i class="devicon-docker-plain"></i> Docker</div>
+              <div class="skill-pill"><i class="devicon-linux-plain"></i> Linux</div>
               <div class="skill-pill"><i class="devicon-git-plain"></i> Git</div>
               <div class="skill-pill"><i class="devicon-vscode-plain"></i> VS Code</div>
+              <div class="skill-pill"><i class="devicon-tensorflow-original"></i> TensorFlow</div>
               <div class="skill-pill"><i class="ph ph-robot"></i> Anthropic API</div>
               <div class="skill-pill"><i class="ph ph-chat-centered-dots"></i> Prompt Engineering</div>
             </div>
@@ -239,10 +254,14 @@
 
           <!-- Data & Ops -->
           <article class="bento-card glass-card">
+            <div class="bento-glow"></div>
             <h3><i class="ph ph-database"></i> Dados & Operações</h3>
             <div class="skills-wrap">
               <div class="skill-pill"><i class="ph ph-chart-bar"></i> <span data-i18n="skillDataScience">Ciência de Dados</span></div>
+              <div class="skill-pill"><i class="ph ph-funnel"></i> <span data-i18n="skillEtl">ETL / Tratamento de Dados</span></div>
+              <div class="skill-pill"><i class="devicon-python-plain"></i> <span data-i18n="skillPythonLibraries">Bibliotecas Python</span></div>
               <div class="skill-pill"><i class="ph ph-gears"></i> <span data-i18n="skillAutomation">Automação</span></div>
+              <div class="skill-pill"><i class="ph ph-notebook"></i> <span data-i18n="skillObsidian">Obsidian</span></div>
               <div class="skill-pill"><i class="ph ph-file-xls"></i> <span data-i18n="skillOffice">Excel / Office</span></div>
               <div class="skill-pill"><i class="ph ph-table"></i> Google Sheets</div>
               <div class="skill-pill"><i class="devicon-google-plain"></i> Google Workspace</div>
@@ -251,6 +270,7 @@
 
           <!-- Visual & Media -->
           <article class="bento-card glass-card visual-bento">
+            <div class="bento-glow"></div>
             <h3><i class="ph ph-palette"></i> Design Visual</h3>
             <div class="skills-wrap">
               <div class="skill-pill"><i class="devicon-photoshop-plain"></i> Photoshop</div>
@@ -268,6 +288,7 @@
 
           <!-- Idiomas -->
           <article class="bento-card glass-card">
+            <div class="bento-glow"></div>
             <h3><i class="ph ph-translate"></i> <span data-i18n="languagesTitle">Idiomas</span></h3>
             <div class="skills-wrap">
               <div class="skill-pill"><span data-i18n="langPt">🇧🇷 Português (Nativo)</span></div>
@@ -275,6 +296,7 @@
               <div class="skill-pill"><span data-i18n="langEs">🇪🇸 Espanhol (Intermediário)</span></div>
             </div>
           </article>
+
         </div>
       </section>
 

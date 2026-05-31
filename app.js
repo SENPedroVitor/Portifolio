@@ -38,10 +38,12 @@ const translations = {
     focusTwoText: "Uso de IA para acelerar processos internos.",
     focusThreeTitle: "Design visual",
     focusThreeText: "Materiais gráficos para comunicação e presença digital.",
-    introLabel: "Resumo",
-    introTitle: "Perfil híbrido para operação, tecnologia e conteúdo visual.",
+    introLabel: "Sobre",
+    introTitle: "Construindo pontes entre dados, automação de processos e design visual.",
     introText:
-      "Atuo bem em ambientes que precisam de organização, análise e execução. Minha base mistura rotinas administrativas, manipulação de dados, automações e apoio criativo para marcas e times.",
+      "Atuo na intersecção entre a análise técnica e a comunicação visual. Com foco em Ciência de Dados, desenvolvo automações inteligentes e arquiteturas de informação robustas, sem abrir mão de uma identidade visual refinada. Meu objetivo é transformar processos complexos em fluxos de trabalho eficientes e intuitivos.",
+    introDetailData: "Desenvolvimento de bases estruturadas, scripts ETL e análise analítica para suporte à tomada de decisões operacionais.",
+    introDetailAi: "Integração de APIs de IA generativa, engenharia de prompt e scripts de automação para otimizar fluxos de trabalho.",
     expLabel: "Experiência",
     expTitle: "Experiências recentes e complementares",
     job1Title: "Cientista de Dados & Apoio Operacional",
@@ -66,10 +68,24 @@ const translations = {
     skillOffice: "Excel / Pacote Office",
     skillGraphicDesign: "Design Gráfico",
     skillMarketing: "Marketing Digital",
+    skillObsidian: "Obsidian (Gestão de Conhecimento)",
+    skillPythonLibraries: "Bibliotecas Python (NumPy, Scikit-Learn, etc.)",
+    skillEtl: "ETL / Tratamento de Dados",
     languagesTitle: "Idiomas",
     langPt: "🇧🇷 Português (Nativo)",
     langEn: "🇺🇸 Inglês (Intermediário)",
     langEs: "🇪🇸 Espanhol (Intermediário)",
+    refTitle: "Referências & Inspiração",
+    refArt: "Arte",
+    refArtVal: "Minimalismo, Bauhaus, Editorial",
+    refMusic: "Música",
+    refMusicVal: "Ambient, Lo-Fi, Synthwave",
+    refCinema: "Cinema",
+    refCinemaVal: "Sci-Fi, Cyberpunk, Neo-noir",
+    refBooks: "Livros",
+    refBooksVal: "Ficção Científica, Design de Info",
+    refGames: "Jogos",
+    refGamesVal: "Puzzle, Indies, Direção de Arte",
     projectsLabel: "Projetos",
     projectsTitle: "Projetos reais já publicados",
     projectsIntro:
@@ -165,10 +181,12 @@ const translations = {
     focusTwoText: "Using AI to accelerate internal processes.",
     focusThreeTitle: "Visual design",
     focusThreeText: "Graphic materials for communication and digital presence.",
-    introLabel: "Overview",
-    introTitle: "A hybrid profile for operations, technology and visual content.",
+    introLabel: "About",
+    introTitle: "Building bridges between data, process automation, and visual design.",
     introText:
-      "I work well in environments that need organization, analysis and execution. My background blends administrative routines, data handling, automation and creative support for brands and teams.",
+      "I operate at the intersection of technical analysis and visual communication. With a focus on Data Science, I build smart automations and robust information architectures, without compromising on refined visual identity. My goal is to transform complex workflows into efficient, intuitive, and high-impact solutions.",
+    introDetailData: "Developing structured databases, ETL scripts, and analytical insights to support operational decision-making.",
+    introDetailAi: "Integrating generative AI APIs, prompt engineering, and automation scripts to optimize workflows.",
     expLabel: "Experience",
     expTitle: "Recent and complementary experience",
     job1Title: "Data Scientist & Operational Support",
@@ -193,10 +211,24 @@ const translations = {
     skillOffice: "Excel / Office Suite",
     skillGraphicDesign: "Graphic Design",
     skillMarketing: "Digital Marketing",
+    skillObsidian: "Obsidian (Knowledge Management)",
+    skillPythonLibraries: "Python Libraries (NumPy, Scikit-Learn, etc.)",
+    skillEtl: "ETL / Data Wrangling",
     languagesTitle: "Languages",
     langPt: "🇧🇷 Portuguese (Native)",
     langEn: "🇺🇸 English (Intermediate)",
     langEs: "🇪🇸 Spanish (Intermediate)",
+    refTitle: "References & Inspiration",
+    refArt: "Art",
+    refArtVal: "Minimalism, Bauhaus, Editorial",
+    refMusic: "Music",
+    refMusicVal: "Ambient, Lo-Fi, Synthwave",
+    refCinema: "Cinema",
+    refCinemaVal: "Sci-Fi, Cyberpunk, Neo-noir",
+    refBooks: "Books",
+    refBooksVal: "Sci-Fi, Info Design",
+    refGames: "Games",
+    refGamesVal: "Puzzle, Indies, Art Direction",
     projectsLabel: "Projects",
     projectsTitle: "Real projects already published",
     projectsIntro:
@@ -299,8 +331,17 @@ function setLanguage(language) {
 }
 
 langToggle.addEventListener("click", () => {
-  const current = localStorage.getItem("portfolio-language") || browserLanguage;
-  setLanguage(current === "pt" ? "en" : "pt");
+  langToggle.classList.add("lang-spinning");
+  
+  // Troca o idioma no meio da animação (quando o texto encolheu e ficou invisível)
+  setTimeout(() => {
+    const current = localStorage.getItem("portfolio-language") || browserLanguage;
+    setLanguage(current === "pt" ? "en" : "pt");
+  }, 250);
+
+  setTimeout(() => {
+    langToggle.classList.remove("lang-spinning");
+  }, 500);
 });
 
 setLanguage(savedLanguage || browserLanguage);
@@ -313,10 +354,12 @@ const body = document.body;
 function setTheme(dark) {
   if (dark) {
     body.classList.add("dark");
+    document.documentElement.classList.add("dark");
     themeIcon.className = "ph ph-sun";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#1a1a1c");
   } else {
     body.classList.remove("dark");
+    document.documentElement.classList.remove("dark");
     themeIcon.className = "ph ph-moon";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#faf9f7");
   }
@@ -331,12 +374,55 @@ if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
   setTheme(true);
 }
 
-themeToggle?.addEventListener("click", () => {
+themeToggle?.addEventListener("click", (e) => {
   themeToggle.classList.add("theme-spinning");
   setTimeout(() => {
     themeToggle.classList.remove("theme-spinning");
   }, 500);
-  setTheme(!body.classList.contains("dark"));
+
+  const isDark = body.classList.contains("dark");
+  const nextDark = !isDark;
+
+  // Se o navegador não suportar View Transitions ou preferir redução de movimento
+  if (!document.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setTheme(nextDark);
+    return;
+  }
+
+  // Obter as coordenadas do clique (ou o centro do botão como fallback)
+  const rect = themeToggle.getBoundingClientRect();
+  const x = e.clientX ?? (rect.left + rect.width / 2);
+  const y = e.clientY ?? (rect.top + rect.height / 2);
+
+  // Calcular o raio para cobrir toda a tela
+  const endRadius = Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y)
+  );
+
+  const transition = document.startViewTransition(() => {
+    setTheme(nextDark);
+  });
+
+  transition.ready.then(() => {
+    const clipPath = [
+      `circle(0px at ${x}px ${y}px)`,
+      `circle(${endRadius}px at ${x}px ${y}px)`
+    ];
+    
+    // Se for para o dark mode, a nova tela (escura) cresce por cima.
+    // Se for para o light mode, a antiga tela (escura) encolhe para revelar a clara.
+    document.documentElement.animate(
+      {
+        clipPath: nextDark ? clipPath : [...clipPath].reverse()
+      },
+      {
+        duration: 500,
+        easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+        pseudoElement: nextDark ? "::view-transition-new(root)" : "::view-transition-old(root)"
+      }
+    );
+  });
 });
 
 // --- Mobile Menu Toggle ---
@@ -684,8 +770,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
+  // --- Scroll Indicator Fade-out ---
+  const scrollIndicator = document.querySelector(".scroll-indicator");
+  if (scrollIndicator) {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const opacity = Math.max(0, 1 - scrollY / 150);
+      scrollIndicator.style.opacity = opacity;
+      if (opacity <= 0) {
+        scrollIndicator.style.pointerEvents = "none";
+      } else {
+        scrollIndicator.style.pointerEvents = "auto";
+      }
+    }, { passive: true });
+  }
+
   // --- Spotlight Hover Glow Effect ---
-  const cards = document.querySelectorAll('.project-card, .visual-card, .contact-box');
+  const cards = document.querySelectorAll('.project-card, .visual-card, .contact-box, .bento-card');
   cards.forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
@@ -695,4 +796,45 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
+
+  // --- Magnetic Buttons Effect ---
+  if (window.matchMedia("(hover: hover)").matches) {
+    const magneticBtns = document.querySelectorAll(".magnetic-btn");
+    magneticBtns.forEach(btn => {
+      btn.addEventListener("mousemove", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const deltaX = e.clientX - centerX;
+        const deltaY = e.clientY - centerY;
+        
+        // Força da atração (coeficiente de deslocamento)
+        const strength = 0.35;
+        const moveX = deltaX * strength;
+        const moveY = deltaY * strength;
+        
+        btn.style.setProperty("--magnetic-x", `${moveX}px`);
+        btn.style.setProperty("--magnetic-y", `${moveY}px`);
+        
+        // Efeito Parallax interno no ícone do botão
+        const icon = btn.querySelector("i");
+        if (icon) {
+          icon.style.transform = `translate(${moveX * 0.15}px, ${moveY * 0.15}px)`;
+          icon.style.transition = "transform 0.1s ease";
+        }
+      });
+      
+      btn.addEventListener("mouseleave", () => {
+        btn.style.setProperty("--magnetic-x", "0px");
+        btn.style.setProperty("--magnetic-y", "0px");
+        
+        const icon = btn.querySelector("i");
+        if (icon) {
+          icon.style.transform = "";
+          icon.style.transition = "transform 0.3s ease";
+        }
+      });
+    });
+  }
 });
