@@ -348,6 +348,16 @@ menuToggle?.addEventListener("click", () => {
   const isOpen = topnav.classList.contains("open");
   menuToggle.querySelector("i").className = isOpen ? "ph ph-x" : "ph ph-list";
   menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  
+  // Evita layout espremido removendo .scrolled se o menu mobile for aberto
+  const topbar = document.querySelector(".topbar");
+  if (topbar) {
+    if (isOpen) {
+      topbar.classList.remove("scrolled");
+    } else if (window.scrollY > 40) {
+      topbar.classList.add("scrolled");
+    }
+  }
 });
 
 // Close menu when a nav link is clicked
@@ -355,6 +365,12 @@ topnav?.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     topnav.classList.remove("open");
     menuToggle.querySelector("i").className = "ph ph-list";
+    
+    // Readquire o estado compactado do topbar se estiver scrolled
+    const topbar = document.querySelector(".topbar");
+    if (topbar && window.scrollY > 40) {
+      topbar.classList.add("scrolled");
+    }
   });
 });
 
@@ -421,6 +437,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Sticky Topbar Scrolled Class ---
+  const topbar = document.querySelector(".topbar");
+  const topnavMenu = document.getElementById("topnav");
+  if (topbar && topnavMenu) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 40 && !topnavMenu.classList.contains("open")) {
+        topbar.classList.add("scrolled");
+      } else {
+        topbar.classList.remove("scrolled");
+      }
+    }, { passive: true });
+  }
+
+  // --- CV Download Button Micro-interaction ---
+  const cvLink = document.getElementById("cvDownload");
+  if (cvLink) {
+    cvLink.addEventListener("click", () => {
+      const icon = cvLink.querySelector("i");
+      const span = cvLink.querySelector("span");
+      const currentLang = localStorage.getItem("portfolio-language") || "pt";
+      
+      if (icon && span) {
+        const originalIconClass = icon.className;
+        const originalText = span.textContent;
+        
+        icon.className = "ph ph-check";
+        span.textContent = currentLang === "pt" ? "Baixado!" : "Downloaded!";
+        cvLink.classList.add("downloaded-success");
+        
+        setTimeout(() => {
+          icon.className = originalIconClass;
+          span.textContent = originalText;
+          cvLink.classList.remove("downloaded-success");
+        }, 2000);
+      }
+    });
+  }
+
   // --- Typewriter Effect ---
   const heroTitle = document.querySelector(".hero h1.typewriter");
   if (heroTitle) {
@@ -469,7 +523,77 @@ document.addEventListener("DOMContentLoaded", () => {
         // Digitação finalizada -> pisca e depois faz o fade-out
         heroTitle.innerHTML = currentText + '<span class="typewriter-cursor blinking finished"></span>';
         heroTitle.classList.add("done");
+        
+        // Inicia a digitação das atribuições (kicker) após 1 segundo
+        setTimeout(startKickerTypewriter, 1000);
       }
+    }
+
+    function startKickerTypewriter() {
+      const kicker = document.querySelector(".hero-kicker");
+      if (!kicker) return;
+      
+      const currentLang = localStorage.getItem("portfolio-language") || "pt";
+      
+      // Lista de atribuições dinâmicas
+      const words = currentLang === "pt" ? [
+        "Cientista de Dados",
+        "Desenvolvedor Python",
+        "Designer Gráfico",
+        translations[currentLang].heroKicker
+      ] : [
+        "Data Scientist",
+        "Python Developer",
+        "Graphic Designer",
+        translations[currentLang].heroKicker
+      ];
+      
+      kicker.innerHTML = '<span class="kicker-text"></span><span class="typewriter-cursor blinking"></span>';
+      kicker.style.visibility = "visible";
+      
+      const textEl = kicker.querySelector(".kicker-text");
+      const cursorEl = kicker.querySelector(".typewriter-cursor");
+      
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      
+      function typeKicker() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          charIndex--;
+          textEl.textContent = currentWord.substring(0, charIndex);
+          cursorEl.classList.remove("blinking");
+        } else {
+          charIndex++;
+          textEl.textContent = currentWord.substring(0, charIndex);
+          cursorEl.classList.remove("blinking");
+        }
+        
+        let delay = isDeleting ? 30 : 60 + Math.random() * 40;
+        
+        if (!isDeleting && charIndex === currentWord.length) {
+          cursorEl.classList.add("blinking");
+          if (wordIndex === words.length - 1) {
+            // Se for a última frase, finaliza piscando e depois esmaece
+            setTimeout(() => {
+              cursorEl.classList.add("finished");
+            }, 1500);
+            return;
+          }
+          isDeleting = true;
+          delay = 1500; // Tempo de exibição da palavra antes de apagar
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex++;
+          delay = 400; // Tempo de espera com o campo limpo
+        }
+        
+        setTimeout(typeKicker, delay);
+      }
+      
+      typeKicker();
     }
 
     // Inicia a digitação após um pequeno delay inicial (cursor fica piscando no início)
